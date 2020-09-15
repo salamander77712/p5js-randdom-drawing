@@ -1,0 +1,49 @@
+let x;
+let y;
+let a;
+let b;
+let c;
+let d;
+function setup() {
+  createCanvas(windowHeight, windowHeight);
+  x=random(0,400);
+  y=random(0,400);
+  a=random(-5,0);
+  b=random(0,5);
+  c=random(-5,0);
+  d=random(0,5);
+}
+function draw() {
+  if(x<0){
+      x=windowHeight;
+    }
+  if(y<0){
+      y=windowHeight;
+    }
+  if(y>windowHeight){
+      y=0;
+    }
+  if(x>windowHeight){
+      x=0;
+    }
+  x+=random(a,b);
+  y+=random(c,d);
+  fill(0);
+  rect(x,y,5,5);
+  rect(y,x,5,5);
+  rect(windowHeight-x,windowHeight-y,5,5);
+  rect(windowHeight-y,windowHeight-x,5,5);
+  rect(windowHeight-x,y,5,5);
+  rect(windowHeight-y,x,5,5);
+  rect(x,windowHeight-y,5,5);
+  rect(y,windowHeight-x,5,5);
+  mouseClicked=function(){
+    background(255,255,255);
+    x=random(0,400);
+    y=random(0,400);
+    a=random(-5,0);
+    b=random(0,5);
+    c=random(-5,0);
+    d=random(0,5);
+  }
+}
